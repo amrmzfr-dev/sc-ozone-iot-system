@@ -22,22 +22,6 @@ The system connects ESP32-powered hardware units to a Go REST API and a React da
 ## System Architecture
 
 ![System Architecture](./assets/architecture.png)
-```
-┌─────────────────────────────────────┐
-│         React Dashboard              │
-│      (TypeScript · Tailwind)         │
-└────────────────┬────────────────────┘
-│ HTTPS / REST
-┌────────────────▼────────────────────┐
-│          Go REST API                 │
-│      PostgreSQL · VPS · UTC+8        │
-└──────┬──────────────────────┬───────┘
-│ HTTPS REST            │ HTTPS REST
-┌──────▼──────────┐  ┌────────▼───────────┐
-│  ESP32 Device A │  │   ESP32 Device N    │
-│  FreeRTOS       │  │   FreeRTOS          │
-└─────────────────┘  └────────────────────┘
-```
 
 Each ESP32 controls a physical ozone machine at a customer outlet. Devices capture treatment events locally, upload them to the backend with retry logic, and poll for remote commands periodically.
 
