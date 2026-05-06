@@ -41,6 +41,12 @@ The system connects ESP32-powered hardware units to a Go REST API and a React da
 
 Each ESP32 controls a physical ozone machine at a customer outlet. Devices capture treatment events locally, upload them to the backend with retry logic, and poll for remote commands periodically.
 
+<p align="center">
+  <img src="./assets/early-prototype.jpg" alt="Early Prototype" width="48%" />
+  &nbsp;
+  <img src="./assets/hardware-board.jpg" alt="Hardware Board" width="48%" />
+</p>
+
 ---
 
 ## Tech Stack
